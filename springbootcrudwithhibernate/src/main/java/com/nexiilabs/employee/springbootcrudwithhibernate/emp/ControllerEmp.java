@@ -33,8 +33,7 @@ public class ControllerEmp {
 
 	@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 	@PostMapping(value = "/add")
-	public ResponseEmp addEmp(@RequestParam("file") MultipartFile uploadDp,@RequestParam int userId, @RequestParam String name,
-			@RequestParam String userLastName, @RequestParam String userEmail, @RequestParam int roleId,
+	public ResponseEmp addEmp(@RequestParam("file") MultipartFile uploadDp,@RequestParam String name,
 			@RequestParam String country) {
 		ResponseEmp res = new ResponseEmp();
 		if (name.equals("")) {
