@@ -10,8 +10,6 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.nexiilabs.employee.springbootcrudwithhibernate.emp.ResponseEmp;
-
 @Repository
 @Transactional
 public class EmployeeDaoImpl implements EmployeeDao {

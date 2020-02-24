@@ -15,7 +15,7 @@ public class IndexController implements ErrorController{
 	}
 	@RequestMapping(path)
 	public String error() {
-		return "No Mapping Availabe";
+		return "No Mapping Availabe in spring boot application";
 	}
 
 }
