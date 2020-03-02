@@ -22,23 +22,29 @@ public class EmployeeController {
 	EmployeeService service;
 	
 	@RequestMapping(value="/add")
-	public EmpResponse addEmp(@RequestBody EmpRequestDTO requestDTO) {
+	public EmpResponse addEmp(@RequestBody EmpRequestDTO requestDTO) throws Exception {
 		EmpResponse response=new EmpResponse();
 		try {
+			int i=1/0;
+			
 			if(requestDTO == null) {
 				response.setStatusCode(0);
 				response.setStatusMessage("Employee Detailes Required..");
 				return response;
 			}
+			
 			response=service.AddEmployee(requestDTO);
 			
 			
 		}catch(Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			throw e;
+			//response.setStatusCode(0);
+			//response.setStatusMessage("Exception Occured : "+e.getMessage());
 		}
 		return response;
 	}
-	
+
 	@GetMapping("getallemp")
 	public EmpResponse getEmployees() {
 		EmpResponse res=new EmpResponse();
